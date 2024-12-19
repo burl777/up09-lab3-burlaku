@@ -1,0 +1,22 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %} Приложение Django {% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <script src="{% static 'js/main.js' %}" defer></script>
+    </head>
+    <body>
+        <header>
+            <a href="/">Главная страница</a>
+            <a href="/about">Обо мне</a>
+            <a href="{% url 'posts:list' %}">Посты</a>
+            <a href="/communities">Группы</a>
+        </header>
+        <div class="container">
+            <main>{% block content %} {% endblock %}</main>
+        </div>
+    </body>
+</html>
